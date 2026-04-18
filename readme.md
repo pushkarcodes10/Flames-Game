@@ -1,4 +1,4 @@
-# FLAMES Game
+# FLAMES Game 🔥
 
 A fun and nostalgic FLAMES game that predicts relationship compatibility based on two names using the classic FLAMES algorithm.
 
