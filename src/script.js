@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () =>    {
     const girlInput = document.getElementById('girl-name')
     const showResult = document.getElementById('showResultBtn')
     const displayResult = document.getElementById('result')
+    const resetButton = document.getElementById('reset-btn')
 
     let flames = ['F', 'L', 'A', 'M', 'E', 'S'];
     let index = 0
@@ -51,6 +52,15 @@ document.addEventListener('DOMContentLoaded', () =>    {
 
         setTimeout(() => {
             displayResult.textContent = meanings[result];
+            resetButton.classList.remove('hidden')
         }, 3000)
+
+    });
+
+    resetButton.addEventListener('click', () => {
+        boyInput.value = ""
+        girlInput.value = ""
+        displayResult.classList.add('hidden')
+        resetButton.classList.add('hidden')
     });
 });
