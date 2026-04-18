@@ -40,13 +40,14 @@ Friends, Lovers, Affection, Marriage, Enemy, Siblings
 ## Tech Stack
 
 - HTML  
-- CSS  
+- Tailwind CSS  
 - JavaScript  
 
 ---
 
 ## Preview
 
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/271e986d-3e78-421e-bfb3-7b350c053a51" />
 
 
 ---
