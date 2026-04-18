@@ -5,9 +5,6 @@ document.addEventListener('DOMContentLoaded', () =>    {
     const displayResult = document.getElementById('result')
     const resetButton = document.getElementById('reset-btn')
 
-    let flames = ['F', 'L', 'A', 'M', 'E', 'S'];
-    let index = 0
-
     const meanings = {
         F: "Friends 🤝",
         L: "Love ❤️",
@@ -19,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () =>    {
 
     showResult.addEventListener('click', (e) => {
         e.preventDefault()
+
+        let flames = ['F', 'L', 'A', 'M', 'E', 'S'];
+        let index = 0
 
         let boyName = boyInput.value.toLowerCase().trim()
         let girlName = girlInput.value.toLowerCase().trim()
@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', () =>    {
         let girlArr = girlName.split('');
 
         for (let i = 0; i < boyArr.length; i++) {
-            const index = girlArr.indexOf(boyArr[i]);
+            const matchIndex = girlArr.indexOf(boyArr[i]);
 
-            if (index !== -1)   {
+            if (matchIndex !== -1)   {
                 boyArr[i] = ""
-                girlArr[index] = ""
+                girlArr[matchIndex] = ""
 
             }
         }
@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () =>    {
         setTimeout(() => {
             displayResult.textContent = meanings[result];
             resetButton.classList.remove('hidden')
+            boyInput.setAttribute('disabled', '')
+            girlInput.setAttribute('disabled', '')
+            showResult.disabled = true
         }, 3000)
 
     });
@@ -60,7 +63,11 @@ document.addEventListener('DOMContentLoaded', () =>    {
     resetButton.addEventListener('click', () => {
         boyInput.value = ""
         girlInput.value = ""
-        displayResult.classList.add('hidden')
+        displayResult.textContent = ""
+        boyInput.removeAttribute('disabled')
+        girlInput.removeAttribute('disabled')
+        displayResult.removeAttribute('disabled')
         resetButton.classList.add('hidden')
+        showResult.disabled = false
     });
 });
