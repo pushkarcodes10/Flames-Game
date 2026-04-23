@@ -47,7 +47,6 @@ Friends, Lovers, Affection, Marriage, Enemy, Siblings
 
 ## Preview
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/271e986d-3e78-421e-bfb3-7b350c053a51" />
-
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/589fa75b-575a-4b1e-96e4-9613073669db" />
 
 ---
