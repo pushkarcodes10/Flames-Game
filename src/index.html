@@ -5,17 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flames-Game 🔥</title>
     <link rel="stylesheet" href="/src/output.css">
+    <style>
+        /* Overflow fix: allow page to scroll and card to adapt */
+        body {
+            min-height: 100vh;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+        }
+
+        #main-card {
+            /* Remove fixed/overflow-hidden so content expands the card */
+            width: min(500px, 95vw);
+            box-sizing: border-box;
+        }
+
+        /* Scale down fonts on small screens */
+        .flames-title { font-size: clamp(2.5rem, 8vw, 4rem); }
+        .flames-input { font-size: clamp(1.6rem, 5vw, 2.8rem); width: 100%; }
+        .flames-btn   { font-size: clamp(1.6rem, 5vw, 2.8rem); }
+        .flames-result{ font-size: clamp(1.8rem, 5.5vw, 3rem); }
+    </style>
 </head>
-<body class="bg-pitch-black h-screen flex items-center justify-center">
-    <div id="main-card" class="bg-beige-light w-145 h-150 rounded-3xl p-8 flex justify-center items-center flex-col ">
-        <h2 class="text-center text-6xl font-fredoka ">FLAMES 🔥</h2>
-        <form class="mt-8 flex flex-col justify-center items-center">
-            <input id="boy-name" class="border-gray-700 border-2 w-100 text-center p-3 text-2xl rounded-xl bg-white font-poppins" placeholder="Enter Boy's Name" type="text" required>  <br>
-            <input id="girl-name" class="border-gray-700 border-2 w-100 text-center p-3 text-2xl rounded-xl bg-white font-poppins" placeholder="Enter Girl's Name" type="text" required>    <br>
-            <button id="showResultBtn" class="text-center text-2xl bg-red-500 font-bold rounded-xl p-3 cursor-pointer font-poppins border-2" type="button">What are we?</button>
+<body class="bg-[url('https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg')] bg-size-[auto_1000px] bg-center flex items-center justify-center">
+
+    <div id="main-card"
+         class="bg-[url('https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1')] bg-size-[auto_500px] bg-center rounded-3xl py-8 px-8 flex justify-center items-center flex-col -rotate-z-[5deg]">
+
+        <h2 class="mt-4 text-center font-zeyada font-bold flames-title">FLAMES 🔥</h2>
+
+        <form class="mt-6 flex flex-col justify-center items-center w-full gap-2">
+            <input id="boy-name"
+                   class="flames-input text-center p-2 focus:border-none outline-none font-zeyada font-bold text-[rgb(0,0,100)] placeholder:font-bold"
+                   placeholder="Boy's Name" type="text" required>
+
+            <input id="girl-name"
+                   class="flames-input text-center p-2 focus:border-none outline-none font-zeyada font-bold text-[rgb(0,0,100)] placeholder:font-bold"
+                   placeholder="Girl's Name" type="text" required>
+
+            <button id="showResultBtn"
+                    class="flames-btn text-center font-bold py-4 px-10 cursor-pointer font-zeyada text-[rgb(0,0,100)]"
+                    type="button">What are we?</button>
         </form>
-        <p class="font-poppins mt-8 text-xl font-extrabold" id="result"></p>
-        <button id="reset-btn" class="mt-5 border-t-black p-4 bg-white font-bold text-2xl rounded-xl border-2 hidden cursor-pointer" type="reset">Play Again</button>
+
+        <p class="font-zeyada mt-4 mb-2 font-extrabold text-[rgb(0,0,100)] flames-result text-center" id="result"></p>
+
+        <button id="reset-btn"
+                class="mt-2 mb-4 text-[rgb(0,0,100)] p-3 font-bold flames-btn hidden cursor-pointer font-zeyada"
+                type="reset">Play Again</button>
     </div>
 </body>
 <script src="./script.js"></script>
